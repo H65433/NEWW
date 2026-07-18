@@ -1,0 +1,1438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teen Patti Master - Download App & Win ₹3000 Bonus!</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <style>
+        /* CSS Variables */
+        :root {
+            --bg-primary: #0a0a1a;
+            --bg-secondary: #12122a;
+            --bg-tertiary: #1a1a3e;
+            --accent-primary: #ffd700;
+            --accent-gradient: linear-gradient(135deg, #ffd700, #ffaa00);
+            --text-heading: #ffffff;
+            --text-body: #e0e0e0;
+            --text-muted: #cccccc;
+            --glow-color: rgba(255, 215, 0, 0.6);
+            --border-glow: rgba(255, 204, 0, 0.3);
+            --transition: all 0.5s ease;
+        }
+
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-body);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: var(--text-heading);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--text-heading);
+            transition: var(--transition);
+        }
+
+        /* Typography */
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--accent-primary);
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+        }
+
+        /* Layout & Utility */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        /* Buttons */
+        .cta-button {
+            display: inline-block;
+            background: var(--accent-gradient);
+            color: #000;
+            font-weight: 800;
+            font-size: 18px;
+            padding: 16px 40px;
+            border-radius: 50px;
+            box-shadow: 0 0 20px var(--glow-color);
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: none;
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.8);
+            color: #000;
+        }
+
+        .cta-small {
+            font-size: 16px;
+            padding: 10px 24px;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(10, 10, 26, 0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-glow);
+            padding: 15px 0;
+            transition: var(--transition);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--accent-primary);
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a.nav-item {
+            font-weight: 500;
+            font-size: 16px;
+        }
+
+        .nav-links a.nav-item:hover {
+            color: var(--accent-primary);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: var(--accent-primary);
+            font-size: 28px;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            position: relative;
+            background: linear-gradient(to bottom, #0d0d2b, #050510);
+            padding-top: 65px;
+            /* offset for navbar */
+            overflow: hidden;
+        }
+
+        /* Decorative bg elements */
+        .hero::before,
+        .hero::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: 0;
+        }
+
+        .hero::before {
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 215, 0, 0.15);
+            top: -100px;
+            right: -100px;
+        }
+
+        .hero::after {
+            width: 400px;
+            height: 400px;
+            background: rgba(138, 43, 226, 0.2);
+            bottom: -150px;
+            left: -150px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, #ffffff, #e0e0e0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero h1 span {
+            color: var(--accent-primary);
+            -webkit-text-fill-color: var(--accent-primary);
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+        }
+
+        .hero p.subheading {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+        }
+
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .badge {
+            background: rgba(18, 18, 42, 0.6);
+            border: 1px solid var(--border-glow);
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+        }
+
+        /* Floating elements animation */
+        .floating-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .float-item {
+            position: absolute;
+            font-size: 2rem;
+            animation: float 6s ease-in-out infinite;
+            opacity: 0.3;
+        }
+
+        .float-1 {
+            top: 20%;
+            left: 15%;
+            animation-delay: 0s;
+            font-size: 3rem;
+        }
+
+        .float-2 {
+            top: 60%;
+            left: 10%;
+            animation-delay: 1s;
+            font-size: 2.5rem;
+        }
+
+        .float-3 {
+            top: 30%;
+            right: 15%;
+            animation-delay: 2s;
+            font-size: 4rem;
+        }
+
+        .float-4 {
+            top: 70%;
+            right: 20%;
+            animation-delay: 3s;
+            font-size: 2rem;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(10deg);
+            }
+
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+        }
+
+        /* Carousel Section */
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            max-width: 100%;
+            margin: 0 auto;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+            z-index: 2;
+            border-bottom: 2px solid var(--border-glow);
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 100%;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            display: block;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 65vh;
+            object-fit: contain;
+            display: block;
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(10, 10, 26, 0.7);
+            color: var(--accent-primary);
+            border: 1px solid var(--accent-primary);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            z-index: 10;
+        }
+
+        .carousel-btn:hover {
+            background: var(--accent-primary);
+            color: #000;
+            box-shadow: 0 0 15px var(--glow-color);
+        }
+
+        .prev-btn {
+            left: 15px;
+        }
+
+        .next-btn {
+            right: 15px;
+        }
+
+        .carousel-indicators {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: var(--transition);
+            border: 1px solid transparent;
+        }
+
+        .dot.active {
+            background: var(--accent-primary);
+            box-shadow: 0 0 10px var(--glow-color);
+            transform: scale(1.2);
+            border-color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            .carousel-container {
+                border-radius: 0;
+                margin-bottom: 20px;
+            }
+
+            .carousel-btn {
+                width: 32px;
+                height: 32px;
+                font-size: 14px;
+                left: 10px;
+            }
+
+            .next-btn {
+                right: 10px;
+                left: auto;
+            }
+
+            .dot {
+                width: 8px;
+                height: 8px;
+            }
+
+            .carousel-slide img {
+                height: auto;
+                max-height: none;
+                aspect-ratio: 16/9;
+            }
+        }
+
+        
+        /* Reviews Section */
+        .reviews {
+            background-color: var(--bg-secondary);
+        }
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 25px;
+        }
+        .review-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-glow);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transition: var(--transition);
+        }
+        .review-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-primary);
+        }
+        .review-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            gap: 15px;
+        }
+        .avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--accent-gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #000;
+            font-size: 20px;
+        }
+        .reviewer-info h4 {
+            margin: 0 0 5px 0;
+            color: var(--text-heading);
+            font-size: 1.1rem;
+        }
+        .stars {
+            color: var(--accent-primary);
+            font-size: 0.9rem;
+        }
+        .review-text {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.5;
+            font-style: italic;
+        }
+
+        
+        .dl-hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        @media (max-width: 992px) {
+            .dl-hero-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        @media (max-width: 992px) {
+            .why-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 768px) {
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .why-card {
+            border: 1px solid var(--border-glow);
+            border-radius: 10px;
+            background: rgba(18,18,42,0.8);
+            overflow: hidden;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+        .why-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.8);
+            border-color: #00ffff;
+        }
+
+        /* Features Section */
+        .features {
+            background-color: var(--bg-secondary);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--bg-tertiary);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            border: 1px solid transparent;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--accent-gradient);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .feature-card:hover {
+            border-color: var(--border-glow);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 215, 0, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: inline-block;
+            filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.4));
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--accent-primary);
+        }
+
+        /* How to Download Section */
+        .how-to-download {
+            background-color: var(--bg-primary);
+        }
+
+        .steps-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .step-card {
+            flex: 1 1 calc(33.333% - 30px);
+            min-width: 250px;
+            max-width: 350px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-glow);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            transition: var(--transition);
+        }
+
+        .step-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(255, 215, 0, 0.2);
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: var(--bg-tertiary);
+            border: 2px solid var(--accent-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--accent-primary);
+            margin: 0 auto 20px;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+        }
+
+        .step-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .download-action {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        /* FAQ Section */
+        .faq {
+            background-color: var(--bg-secondary);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .accordion-item {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-glow);
+            border-radius: 10px;
+            margin-bottom: 15px;
+            overflow: hidden;
+        }
+
+        .accordion-header {
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+        }
+
+        .accordion-header:hover {
+            color: var(--accent-primary);
+        }
+
+        .accordion-icon {
+            color: var(--accent-primary);
+            font-size: 1.5rem;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+        }
+
+        .accordion-content {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            color: var(--text-muted);
+        }
+
+        .accordion-item.active .accordion-content {
+            padding: 0 20px 20px;
+            max-height: 300px;
+            /* Arbitrary large height to allow expansion */
+        }
+
+        .accordion-item.active .accordion-icon {
+            transform: rotate(45deg);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #050510;
+            padding: 60px 0 20px;
+            border-top: 1px solid var(--border-glow);
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 20px;
+        }
+
+        .footer .logo {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-primary);
+        }
+
+        .disclaimer {
+            font-size: 0.85rem;
+            color: #888;
+            max-width: 600px;
+            margin: 0 auto 20px;
+            padding: 15px;
+            border: 1px solid #333;
+            border-radius: 10px;
+        }
+
+        .copyright {
+            font-size: 0.9rem;
+            color: var(--accent-primary);
+        }
+
+        /* Floating Mobile CTA */
+        .mobile-cta {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 999;
+            width: 90%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+        }
+
+        /* Animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .steps-container::before {
+                display: none;
+            }
+        }
+        /* Floating Widget Styles */
+        .floating-widget {
+            position: fixed;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 9999;
+            cursor: pointer;
+            animation: floatWidget 3s ease-in-out infinite;
+            transition: transform 0.3s ease, filter 0.3s ease;
+            filter: drop-shadow(0 10px 15px rgba(255, 215, 0, 0.4));
+            display: block;
+        }
+
+        .floating-widget:hover {
+            animation-play-state: paused;
+            transform: translateY(-50%) scale(1.1);
+            filter: drop-shadow(0 15px 25px rgba(255, 215, 0, 0.8));
+        }
+
+        .floating-widget img {
+            width: 120px;
+            height: auto;
+        }
+
+        .floating-widget::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+            animation: pulseWidget 2s infinite;
+            z-index: -1;
+        }
+
+        @keyframes floatWidget {
+            0% { transform: translateY(-50%); }
+            50% { transform: translateY(calc(-50% - 15px)); }
+            100% { transform: translateY(-50%); }
+        }
+
+        @keyframes pulseWidget {
+            0% { transform: scale(1); opacity: 0.8; }
+            100% { transform: scale(1.3); opacity: 0; }
+        }
+
+        @media (max-width: 768px) {
+            .floating-widget {
+                right: 15px;
+                top: auto;
+                bottom: 110px; /* Above mobile CTA */
+                transform: none;
+                animation: floatWidgetMobile 3s ease-in-out infinite;
+            }
+
+            .floating-widget:hover {
+                transform: scale(1.1);
+            }
+
+            .floating-widget img {
+                width: 80px;
+            }
+
+            @keyframes floatWidgetMobile {
+                0% { transform: translateY(0); }
+                50% { transform: translateY(-15px); }
+                100% { transform: translateY(0); }
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: var(--bg-primary);
+                flex-direction: column;
+                justify-content: center;
+                gap: 40px;
+                transition: 0.4s;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links .cta-button {
+                display: none;
+                /* Hide top CTA on mobile nav menu, handled by floating CTA */
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p.subheading {
+                font-size: 1rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .steps-container {
+                flex-direction: column;
+            }
+
+            .mobile-cta {
+                display: block;
+            }
+
+            /* Add padding to footer to avoid hiding content under floating CTA */
+            .footer {
+                padding-bottom: 90px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo" style="display: flex; align-items: center; gap: 12px;"><img src="logo.png" alt="Teen Patti Master" style="height: 50px; width: auto; margin: 0;"><span style="font-size: 1.6rem; line-height: 1; transform: translateY(2px);">Teen Patti Master</span></a>
+
+            <div class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-item">Home</a>
+                <a href="download.html" class="nav-item">Download</a>
+                <a href="index.html#features" class="nav-item">Features</a>
+                <a href="contactus.html" class="nav-item">Contact Us</a>
+                <a href="index.html#faq" class="nav-item">FAQ</a>
+                <!-- REPLACE YOUR_REFERRAL_LINK WITH YOUR ACTUAL REFERRAL URL -->
+                <a href="https://www.earntp.com/m/smclc8?scene=&f=w&p=wa&l=en&tp=m116" target="_blank" class="cta-button cta-small">Download Now</a>
+            </div>
+
+            <button class="hamburger" id="hamburger">☰</button>
+        </div>
+    </nav>
+
+    
+    <!-- Download Hero Section -->
+    <section class="download-hero" style="padding-top: 120px; min-height: 80vh; display: flex; align-items: center;">
+        <div class="container">
+            <div class="dl-hero-grid">
+                <div class="dl-image-part animate-on-scroll">
+                    <!-- Placeholder for the small full photo on the left -->
+                    <img src="website 5.png" alt="Teen Patti Master App" style="width: 100%; border-radius: 20px; box-shadow: 0 0 30px rgba(255, 215, 0, 0.3); border: 2px solid var(--border-glow);">
+                </div>
+                <div class="dl-content-part animate-on-scroll">
+                    <h1 style="font-size: 3.5rem; margin-bottom: 20px; background: linear-gradient(to right, #ffffff, #e0e0e0); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">TEEN PATTI MASTER<br><span style="color: var(--accent-primary); -webkit-text-fill-color: var(--accent-primary);">WIN UP TO ₹1,000,000+</span></h1>
+                    <p style="font-size: 1.2rem; color: var(--text-muted); margin-bottom: 40px;">Download the official Teen Patti Master app now. Safe, secure, and instant withdrawals guaranteed. Join India's most trusted skill-gaming platform today.</p>
+                    <a href="https://www.earntp.com/m/smclc8?scene=&f=w&p=wa&l=en&tp=m116" target="_blank" class="cta-button" style="padding: 18px 50px; font-size: 20px;">⬇ DOWNLOAD NOW</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Why Download Section -->
+    <section class="why-download" style="background: var(--bg-primary); padding: 80px 0;">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll" style="margin-bottom: 50px;">Why Download & Install Teen Patti Master?</h2>
+            <div class="why-grid">
+                <div class="why-card animate-on-scroll">
+                    <h3 style="background: linear-gradient(90deg, #00d2ff, #3a7bd5); color: #fff; padding: 15px 20px; font-size: 1.1rem; margin: 0;">1. Authentic Online Teen Patti Experience</h3>
+                    <div style="padding: 25px 20px; font-size: 0.95rem; color: #ddd; background: linear-gradient(to bottom, #1a1a3e, #0a0a1a);">Enjoy real, classic Teen Patti gameplay with smooth controls, vibrant graphics, and true-to-life card mechanics. Play against real Indian players in real time for the most immersive online experience.</div>
+                </div>
+                <div class="why-card animate-on-scroll">
+                    <h3 style="background: linear-gradient(90deg, #ff00cc, #333399); color: #fff; padding: 15px 20px; font-size: 1.1rem; margin: 0;">2. Exciting Game Modes for Every Player</h3>
+                    <div style="padding: 25px 20px; font-size: 0.95rem; color: #ddd; background: linear-gradient(to bottom, #1a1a3e, #0a0a1a);">Choose from a huge variety of modes including Classic Teen Patti, AK47, Muflis, tournaments, and private tables. There's always a fun and rewarding way to enjoy this thrilling card game.</div>
+                </div>
+                <div class="why-card animate-on-scroll">
+                    <h3 style="background: linear-gradient(90deg, #00c6ff, #0072ff); color: #fff; padding: 15px 20px; font-size: 1.1rem; margin: 0;">3. Play with a Fun Wink & Social Vibe</h3>
+                    <div style="padding: 25px 20px; font-size: 0.95rem; color: #ddd; background: linear-gradient(to bottom, #1a1a3e, #0a0a1a);">Express yourself and enjoy lively matches with a friendly wink system. Chat, interact, and add joy to every round while playing with real opponents across India.</div>
+                </div>
+                <div class="why-card animate-on-scroll">
+                    <h3 style="background: linear-gradient(90deg, #f12711, #f5af19); color: #fff; padding: 15px 20px; font-size: 1.1rem; margin: 0;">4. Official APK Optimized for Android</h3>
+                    <div style="padding: 25px 20px; font-size: 0.95rem; color: #ddd; background: linear-gradient(to bottom, #1a1a3e, #0a0a1a);">Lightweight, fast, and fully optimized for Android devices. The official APK installs smoothly on Samsung, Mi, Realme, Oppo, Vivo, and all popular Indian mobile brands.</div>
+                </div>
+                <div class="why-card animate-on-scroll">
+                    <h3 style="background: linear-gradient(90deg, #8E2DE2, #4A00E0); color: #fff; padding: 15px 20px; font-size: 1.1rem; margin: 0;">5. Original & Safe Real-Money Gaming</h3>
+                    <div style="padding: 25px 20px; font-size: 0.95rem; color: #ddd; background: linear-gradient(to bottom, #1a1a3e, #0a0a1a);">Experience the original Teen Patti Master with fair gameplay, secure transactions, and top-tier encryption. Play with confidence on the most trusted platform in India.</div>
+                </div>
+                <div class="why-card animate-on-scroll">
+                    <h3 style="background: linear-gradient(90deg, #11998e, #38ef7d); color: #fff; padding: 15px 20px; font-size: 1.1rem; margin: 0;">6. Smooth & Fast App Performance</h3>
+                    <div style="padding: 25px 20px; font-size: 0.95rem; color: #ddd; background: linear-gradient(to bottom, #1a1a3e, #0a0a1a);">Our user-friendly app is designed for effortless navigation, quick loading, and stable performance. Enjoy a seamless experience on any Android phone, anytime, anywhere.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- How to Download Section -->
+    <section id="download" class="how-to-download">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll" style="margin-bottom: 10px;">How to Download and Install Teen
+                Patti Master APK</h2>
+            <p class="subheading animate-on-scroll"
+                style="text-align: center; margin-bottom: 40px; color: var(--text-muted);">Follow these simple steps to
+                get the official APK and start playing in minutes.</p>
+
+            <div class="steps-container">
+                <div class="step-card animate-on-scroll">
+                    <div class="step-number">1</div>
+                    <p>Tap the Download APK button above, then locate the file in your downloads folder.</p>
+                </div>
+                <div class="step-card animate-on-scroll">
+                    <div class="step-number">2</div>
+                    <p>Open the file on your device and allow installation from unknown sources.</p>
+                </div>
+                <div class="step-card animate-on-scroll">
+                    <div class="step-number">3</div>
+                    <p>Once installed, open the app and complete your account verification.</p>
+                </div>
+                <div class="step-card animate-on-scroll">
+                    <div class="step-number">4</div>
+                    <p>Log in and claim your ₹11000 Signup Bonus instantly</p>
+                </div>
+                <div class="step-card animate-on-scroll">
+                    <div class="step-number">5</div>
+                    <p>Start playing Teen Patti Master and enjoy endless hours of 3 Patti card game fun!</p>
+                </div>
+            </div>
+
+            <div class="download-action animate-on-scroll">
+                <!-- REPLACE YOUR_REFERRAL_LINK WITH YOUR ACTUAL REFERRAL URL -->
+                <a href="https://www.earntp.com/m/smclc8?scene=&f=w&p=wa&l=en&tp=m116" target="_blank" class="cta-button">⬇ Download Now</a>
+            </div>
+        </div>
+    </section>
+
+    
+
+    
+
+    
+    <!-- Reviews Section -->
+    <section id="reviews" class="reviews">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">What Our Players Say</h2>
+            <div class="reviews-grid">
+                <div class="review-card animate-on-scroll"><div class="review-header"><div class="avatar">A</div><div class="reviewer-info"><h4>Aryan Desai</h4><div class="stars">⭐⭐⭐⭐⭐</div></div></div><p class="review-text">This APK runs really smoothly on my Xiaomi phone. Installation was quick and the app never lags. Withdrawals are fast and this is easily the best original Teen Patti game I’ve played in India.</p></div>
+                <div class="review-card animate-on-scroll"><div class="review-header"><div class="avatar">A</div><div class="reviewer-info"><h4>Ananya Iyer</h4><div class="stars">⭐⭐⭐⭐⭐</div></div></div><p class="review-text">I love this app! The interface is easy to use and online gameplay feels very authentic. It works perfectly on my OPPO phone without any issues. Definitely go for this official version.</p></div>
+                <div class="review-card animate-on-scroll"><div class="review-header"><div class="avatar">K</div><div class="reviewer-info"><h4>Karthik Menon</h4><div class="stars">⭐⭐⭐⭐⭐</div></div></div><p class="review-text">I’ve tried many fake apps before, but this one is safe and original. Runs great on my Samsung device. Tournaments are fun and I got my signup bonus without any hassle.</p></div>
+                <div class="review-card animate-on-scroll"><div class="review-header"><div class="avatar">R</div><div class="reviewer-info"><h4>Rakesh Yadav</h4><div class="stars">⭐⭐⭐⭐⭐</div></div></div><p class="review-text">यह ऐप बहुत बढ़िया है! स्मूदली चलता है और इंस्टॉलेशन भी आसान है। मेरे वीवो फोन पर बिल्कुल लैग नहीं होता। असली टीन पट्टी का मजा लेने के लिए यह सबसे अच्छा ऐप है。</p></div>
+                <div class="review-card animate-on-scroll"><div class="review-header"><div class="avatar">D</div><div class="reviewer-info"><h4>Divya Pillai</h4><div class="stars">⭐⭐⭐⭐⭐</div></div></div><p class="review-text">The app is lightweight and works on all Android phones like vivo, realme, and more. Gameplay is fair and the experience is really smooth. I play with friends every day.</p></div>
+                <div class="review-card animate-on-scroll"><div class="review-header"><div class="avatar">S</div><div class="reviewer-info"><h4>Suman Gupta</h4><div class="stars">⭐⭐⭐⭐⭐</div></div></div><p class="review-text">मैंने कई ऐप्स आज़माए लेकिन यह सबसे बेहतरीन है। यह ऑफिशियल और सुरक्षित है तथा हर एंड्रॉइड फोन पर चलता है। गेमप्ले असली लगता है और दोस्तों के साथ खेलने में बहुत मजा आता है。</p></div>
+                <div class="review-card animate-on-scroll"><div class="review-header"><div class="avatar">V</div><div class="reviewer-info"><h4>Vikram Singh</h4><div class="stars">⭐⭐⭐⭐⭐</div></div></div><p class="review-text">Great app for daily earning. Customer support is very responsive and the UI is amazing!</p></div>
+                <div class="review-card animate-on-scroll"><div class="review-header"><div class="avatar">P</div><div class="reviewer-info"><h4>Pooja Sharma</h4><div class="stars">⭐⭐⭐⭐⭐</div></div></div><p class="review-text">Withdrawal is super fast, within seconds I got the money in my bank account. Highly trusted!</p></div>
+                <div class="review-card animate-on-scroll"><div class="review-header"><div class="avatar">N</div><div class="reviewer-info"><h4>Nitin Patel</h4><div class="stars">⭐⭐⭐⭐⭐</div></div></div><p class="review-text">Best gaming app in the market right now. Graphics are top notch.</p></div>
+                <div class="review-card animate-on-scroll"><div class="review-header"><div class="avatar">M</div><div class="reviewer-info"><h4>Manish Kumar</h4><div class="stars">⭐⭐⭐⭐⭐</div></div></div><p class="review-text">Highly recommend this to everyone looking for a genuine Teen Patti app.</p></div>
+                <div class="review-card animate-on-scroll"><div class="review-header"><div class="avatar">S</div><div class="reviewer-info"><h4>Sunita Verma</h4><div class="stars">⭐⭐⭐⭐⭐</div></div></div><p class="review-text">Very easy to download and register. Got my bonus immediately.</p></div>
+                <div class="review-card animate-on-scroll"><div class="review-header"><div class="avatar">R</div><div class="reviewer-info"><h4>Rahul Reddy</h4><div class="stars">⭐⭐⭐⭐⭐</div></div></div><p class="review-text">I have been playing for a month now. Really satisfying experience and no bugs.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container faq-container">
+            <h2 class="section-title animate-on-scroll">Frequently Asked Questions</h2>
+
+            <div class="accordion-item animate-on-scroll">
+                <div class="accordion-header">
+                    Is this app safe to download?
+                    <span class="accordion-icon">+</span>
+                </div>
+                <div class="accordion-content">
+                    Yes, absolutely! The app is RNG certified and uses advanced 128-bit encryption to ensure complete
+                    safety and security of your personal data and funds.
+                </div>
+            </div>
+
+            <div class="accordion-item animate-on-scroll">
+                <div class="accordion-header">
+                    How do I claim my welcome bonus?
+                    <span class="accordion-icon">+</span>
+                </div>
+                <div class="accordion-content">
+                    Once you download and install the app, simply register using your mobile number. The welcome bonus
+                    will be automatically credited to your wallet, which you can use to play games.
+                </div>
+            </div>
+
+            <div class="accordion-item animate-on-scroll">
+                <div class="accordion-header">
+                    Which Android version is required?
+                    <span class="accordion-icon">+</span>
+                </div>
+                <div class="accordion-content">
+                    The app is highly optimized and runs smoothly on Android 5.0 and above. It is lightweight and
+                    doesn't drain your battery.
+                </div>
+            </div>
+
+            <div class="accordion-item animate-on-scroll">
+                <div class="accordion-header">
+                    How do I withdraw my winnings?
+                    <span class="accordion-icon">+</span>
+                </div>
+                <div class="accordion-content">
+                    You can easily withdraw your winnings directly to your Bank Account using UPI or IMPS. Withdrawals
+                    are processed instantly, 24/7.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="logo" style="display: flex; align-items: center; gap: 12px; justify-content: center;"><img src="logo.png" alt="Teen Patti Master" style="height: 55px; width: auto; margin: 0;"><span style="font-size: 1.8rem; line-height: 1; transform: translateY(2px);">Teen Patti Master</span></div>
+
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="download.html">Download</a>
+                <a href="index.html#features">Features</a>
+                <a href="contactus.html">Contact Us</a>
+                <a href="index.html#faq">FAQ</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+
+            <div class="disclaimer">
+                <strong>Disclaimer:</strong> This game involves an element of financial risk and may be addictive.
+                Please play responsibly and at your own risk. You must be 18 years or older to play real money games.
+                Not for users from states where skill gaming is banned.
+            </div>
+
+            <div class="copyright">
+                &copy; 2026 Teen Patti Master. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Animated Download Widget -->
+    <a href="https://www.earntp.com/m/smclc8?scene=&f=w&p=wa&l=en&tp=m116" target="_blank" class="floating-widget" aria-label="Download Teen Patti Master">
+        <img src="floating object.png" alt="Download Icon">
+    </a>
+
+    <!-- Floating Mobile CTA -->
+    <!-- REPLACE YOUR_REFERRAL_LINK WITH YOUR ACTUAL REFERRAL URL -->
+    <a href="YOUR_REFERRAL_LINK" target="_blank" class="cta-button mobile-cta">⬇ Download Now & Win</a>
+
+    <script src="config.js"></script>
+    <script>
+        // Mobile Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        const navItems = document.querySelectorAll('.nav-item');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+        });
+
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                hamburger.textContent = '☰';
+            });
+        });
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(10, 10, 26, 0.95)';
+                navbar.style.boxShadow = '0 4px 20px rgba(0,0,0,0.5)';
+            } else {
+                navbar.style.background = 'rgba(10, 10, 26, 0.8)';
+                navbar.style.boxShadow = 'none';
+            }
+        });
+
+        // Accordion Functionality
+        const accordionHeaders = document.querySelectorAll('.accordion-header');
+
+        accordionHeaders.forEach(header => {
+            header.addEventListener('click', () => {
+                const item = header.parentElement;
+                const isActive = item.classList.contains('active');
+
+                // Close all other accordions
+                document.querySelectorAll('.accordion-item').forEach(acc => {
+                    acc.classList.remove('active');
+                });
+
+                // Toggle current accordion
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Intersection Observer for Scroll Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    // Optional: Stop observing once animated
+                    // observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach(element => {
+            observer.observe(element);
+        });
+
+        // Carousel Functionality
+        const track = document.getElementById('carouselTrack');
+        const slides = Array.from(document.querySelectorAll('.carousel-slide'));
+        const nextBtn = document.getElementById('nextBtn');
+        const prevBtn = document.getElementById('prevBtn');
+        const dots = Array.from(document.querySelectorAll('.dot'));
+        const carouselContainer = document.getElementById('carouselContainer');
+
+        let currentIndex = 0;
+        let slideInterval;
+        const intervalTime = 3000;
+
+        const updateCarousel = (index) => {
+            track.style.transform = `translateX(-${index * 100}%)`;
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[index].classList.add('active');
+            currentIndex = index;
+        };
+
+        const nextSlide = () => {
+            let nextIndex = currentIndex + 1;
+            if (nextIndex >= slides.length) nextIndex = 0;
+            updateCarousel(nextIndex);
+        };
+
+        const prevSlide = () => {
+            let prevIndex = currentIndex - 1;
+            if (prevIndex < 0) prevIndex = slides.length - 1;
+            updateCarousel(prevIndex);
+        };
+
+        // Event Listeners
+        nextBtn.addEventListener('click', () => {
+            nextSlide();
+            resetInterval();
+        });
+
+        prevBtn.addEventListener('click', () => {
+            prevSlide();
+            resetInterval();
+        });
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                updateCarousel(index);
+                resetInterval();
+            });
+        });
+
+        // Touch events for mobile swipe
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        carouselContainer.addEventListener('touchstart', e => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        carouselContainer.addEventListener('touchend', e => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, { passive: true });
+
+        const handleSwipe = () => {
+            if (touchEndX < touchStartX - 50) {
+                nextSlide();
+                resetInterval();
+            }
+            if (touchEndX > touchStartX + 50) {
+                prevSlide();
+                resetInterval();
+            }
+        };
+
+        // Autoplay functionality
+        const startInterval = () => {
+            slideInterval = setInterval(nextSlide, intervalTime);
+        };
+
+        const resetInterval = () => {
+            clearInterval(slideInterval);
+            startInterval();
+        };
+
+        // Pause on hover (desktop)
+        carouselContainer.addEventListener('mouseenter', () => {
+            clearInterval(slideInterval);
+        });
+
+        carouselContainer.addEventListener('mouseleave', () => {
+            startInterval();
+        });
+
+        // Initialize autoplay
+        startInterval();
+
+        // Auto-update all referral links from backend
+        (function setupDynamicReferralLinks() {
+            const apiBase =
+                window.REFERRAL_API_BASE ||
+                (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1"
+                    ? "http://localhost:3000"
+                    : window.location.origin);
+            let dynamicReferralUrl = "";
+
+            const isReferralAnchor = (anchor) => {
+                const href = anchor.getAttribute("href") || "";
+                const className = anchor.className || "";
+                const label = (anchor.textContent || "").trim().toLowerCase();
+                const isDownloadNow = label.includes("download now");
+                const isDownloadCta = className.includes("cta-button");
+                const isFloatingWidget = className.includes("floating-widget");
+                const isInternalNav =
+                    href.startsWith("#") ||
+                    href.endsWith(".html") ||
+                    href.startsWith("mailto:") ||
+                    href.startsWith("tel:");
+                return (isDownloadNow || isDownloadCta || isFloatingWidget) && !isInternalNav;
+            };
+
+            const applyReferralToAnchors = (url) => {
+                document.querySelectorAll("a[href]").forEach((anchor) => {
+                    if (isReferralAnchor(anchor)) {
+                        anchor.setAttribute("href", url);
+                        anchor.setAttribute("target", "_blank");
+                    }
+                });
+            };
+
+            document.addEventListener("click", async (event) => {
+                const anchor = event.target.closest("a[href]");
+                if (!anchor || !isReferralAnchor(anchor)) return;
+
+                if (!dynamicReferralUrl) {
+                    event.preventDefault();
+                    try {
+                        const response = await fetch(`${apiBase}/api/referral/current`);
+                        const result = await response.json();
+                        if (!response.ok || !result.ok || !result.referralUrl) return;
+                        dynamicReferralUrl = result.referralUrl;
+                        applyReferralToAnchors(dynamicReferralUrl);
+                        window.open(dynamicReferralUrl, "_blank");
+                    } catch (_error) {
+                        // Fallback: keep existing href if API unavailable.
+                    }
+                }
+            });
+
+            (async () => {
+                try {
+                    const response = await fetch(`${apiBase}/api/referral/current`);
+                    const result = await response.json();
+                    if (!response.ok || !result.ok || !result.referralUrl) return;
+                    dynamicReferralUrl = result.referralUrl;
+                    applyReferralToAnchors(dynamicReferralUrl);
+                } catch (_error) {
+                    // Keep existing links if API is unavailable.
+                }
+            })();
+        })();
+    </script>
+    <script>
+        // Independent fallback script to force latest referral link on download page
+        (function forceLatestReferralLink() {
+            const apiBase =
+                window.REFERRAL_API_BASE ||
+                (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1"
+                    ? "http://localhost:3000"
+                    : window.location.origin);
+
+            const isReferralAnchor = (anchor) => {
+                const href = anchor.getAttribute("href") || "";
+                const cls = anchor.className || "";
+                const label = (anchor.textContent || "").trim().toLowerCase();
+                const isDownloadLabel = label.includes("download");
+                const isReferralClass = cls.includes("cta-button") || cls.includes("floating-widget");
+                const isInternal =
+                    href.startsWith("#") ||
+                    href.endsWith(".html") ||
+                    href.startsWith("mailto:") ||
+                    href.startsWith("tel:");
+                return (isDownloadLabel || isReferralClass || href.includes("earntp.com")) && !isInternal;
+            };
+
+            const applyLink = (url) => {
+                document.querySelectorAll("a[href]").forEach((a) => {
+                    if (isReferralAnchor(a)) {
+                        a.setAttribute("href", url);
+                        a.setAttribute("target", "_blank");
+                    }
+                });
+            };
+
+            let latestLink = "";
+            const fetchAndApply = async () => {
+                const res = await fetch(`${apiBase}/api/referral/current`);
+                const data = await res.json();
+                if (!res.ok || !data.ok || !data.referralUrl) return "";
+                latestLink = data.referralUrl;
+                applyLink(latestLink);
+                return latestLink;
+            };
+
+            document.addEventListener("click", async (event) => {
+                const anchor = event.target.closest("a[href]");
+                if (!anchor || !isReferralAnchor(anchor)) return;
+                if (!latestLink) {
+                    event.preventDefault();
+                    const url = await fetchAndApply();
+                    if (url) window.open(url, "_blank");
+                }
+            });
+
+            fetchAndApply().catch(() => {});
+        })();
+    </script>
+</body>
+
+</html>

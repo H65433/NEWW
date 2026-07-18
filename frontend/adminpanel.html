@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Referral Link</title>
+    <style>
+        :root {
+            --bg: #0b1020;
+            --card: #121a31;
+            --text: #f2f4ff;
+            --muted: #9aa5d1;
+            --accent: #ffd700;
+            --border: #253055;
+            --success: #33d17a;
+            --danger: #ff5c7a;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            padding: 30px 16px;
+        }
+
+        .wrap {
+            max-width: 860px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 18px;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            margin-bottom: 14px;
+            color: var(--accent);
+        }
+
+        h2 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="url"] {
+            width: 100%;
+            padding: 11px 12px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            background: #0a1329;
+            color: var(--text);
+            margin-bottom: 12px;
+        }
+
+        button {
+            background: var(--accent);
+            color: #111;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 14px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        button:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .row {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 10px;
+        }
+
+        .status {
+            margin-top: 8px;
+            font-size: 0.93rem;
+        }
+
+        .status.success {
+            color: var(--success);
+        }
+
+        .status.error {
+            color: var(--danger);
+        }
+
+        .history-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.92rem;
+        }
+
+        .history-table th,
+        .history-table td {
+            border-bottom: 1px solid var(--border);
+            text-align: left;
+            padding: 10px 8px;
+            vertical-align: top;
+            word-break: break-word;
+        }
+
+        .muted {
+            color: var(--muted);
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="card" id="loginCard">
+            <h1>Admin Panel Login</h1>
+            <label for="username">Admin Username</label>
+            <input id="username" type="text" placeholder="Enter admin username" />
+
+            <label for="password">Password</label>
+            <input id="password" type="password" placeholder="Enter password" />
+
+            <button id="loginBtn" type="button">Login</button>
+            <p id="loginStatus" class="status"></p>
+        </div>
+
+        <div id="panelContent" class="hidden">
+            <div class="card">
+                <h1>Referral Link Update</h1>
+                <p class="muted" style="margin-bottom: 12px;">This page is not linked in the home page. Access only via URL `/adminpanel` or `/adminpanel.html`.</p>
+
+                <label for="adminName">Admin Name</label>
+                <input id="adminName" type="text" placeholder="Example: Prit Admin" />
+
+                <label for="newReferralLink">New Referral Link</label>
+                <div class="row">
+                    <input id="newReferralLink" type="url" placeholder="https://example.com/your-new-link" />
+                    <button id="updateBtn" type="button">Update Link</button>
+                </div>
+
+                <p class="muted">Current Link:</p>
+                <p id="currentLinkText" style="margin-top: 4px; word-break: break-all;"></p>
+                <p id="updateStatus" class="status"></p>
+            </div>
+
+            <div class="card">
+                <h2>History of Changes</h2>
+                <table class="history-table">
+                    <thead>
+                        <tr>
+                            <th>Admin Name</th>
+                            <th>Date & Time</th>
+                            <th>Updated Link</th>
+                        </tr>
+                    </thead>
+                    <tbody id="historyBody"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="config.js"></script>
+    <script>
+        const API_BASE =
+            window.REFERRAL_API_BASE ||
+            (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1"
+                ? "http://localhost:3000"
+                : window.location.origin);
+
+        const loginCard = document.getElementById("loginCard");
+        const panelContent = document.getElementById("panelContent");
+        const loginBtn = document.getElementById("loginBtn");
+        const updateBtn = document.getElementById("updateBtn");
+
+        const loginStatus = document.getElementById("loginStatus");
+        const updateStatus = document.getElementById("updateStatus");
+        const currentLinkText = document.getElementById("currentLinkText");
+        const historyBody = document.getElementById("historyBody");
+
+        let auth = { username: "", password: "" };
+
+        async function fetchJson(url, options) {
+            const response = await fetch(url, options);
+            const raw = await response.text();
+            let data = {};
+            try {
+                data = raw ? JSON.parse(raw) : {};
+            } catch (_error) {
+                data = { message: raw || "Unexpected server response" };
+            }
+
+            if (!response.ok || data.ok === false) {
+                throw new Error(data.message || `Request failed with status ${response.status}`);
+            }
+            return data;
+        }
+
+        async function renderCurrentLink() {
+            const data = await fetchJson(`${API_BASE}/api/referral/current`);
+            currentLinkText.textContent = data.referralUrl || "No link updated yet.";
+        }
+
+        async function renderHistory() {
+            const data = await fetchJson(
+                `${API_BASE}/api/admin/history?username=${encodeURIComponent(auth.username)}&password=${encodeURIComponent(auth.password)}`
+            );
+            const items = data.items || [];
+            historyBody.innerHTML = "";
+
+            if (!items.length) {
+                const row = document.createElement("tr");
+                row.innerHTML = "<td colspan='3' class='muted'>No updates yet.</td>";
+                historyBody.appendChild(row);
+                return;
+            }
+
+            items.slice().reverse().forEach((item) => {
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                    <td>${item.admin_name || "-"}</td>
+                    <td>${item.changed_at ? new Date(item.changed_at).toLocaleString() : "-"}</td>
+                    <td>${item.referral_url || "-"}</td>
+                `;
+                historyBody.appendChild(row);
+            });
+        }
+
+        function setStatus(el, msg, isError) {
+            el.textContent = msg;
+            el.className = `status ${isError ? "error" : "success"}`;
+        }
+
+        loginBtn.addEventListener("click", async () => {
+            const username = document.getElementById("username").value.trim();
+            const password = document.getElementById("password").value;
+
+            if (!username || !password) {
+                setStatus(loginStatus, "Username and password are required.", true);
+                return;
+            }
+
+            auth = { username, password };
+
+            try {
+                await renderCurrentLink();
+                await renderHistory();
+                loginCard.classList.add("hidden");
+                panelContent.classList.remove("hidden");
+                setStatus(loginStatus, "", false);
+                setStatus(updateStatus, "Connected to Supabase tables.", false);
+                return;
+            } catch (error) {
+                setStatus(loginStatus, error.message, true);
+            }
+        });
+
+        updateBtn.addEventListener("click", async () => {
+            const adminName = document.getElementById("adminName").value.trim();
+            const newLink = document.getElementById("newReferralLink").value.trim();
+
+            if (!adminName) {
+                setStatus(updateStatus, "Admin name is required.", true);
+                return;
+            }
+
+            if (!newLink || !/^https?:\/\/.+/i.test(newLink)) {
+                setStatus(updateStatus, "Please enter a valid URL.", true);
+                return;
+            }
+
+            try {
+                updateBtn.disabled = true;
+                await fetchJson(`${API_BASE}/api/admin/update-link`, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        username: auth.username,
+                        password: auth.password,
+                        adminName,
+                        newLink,
+                    }),
+                });
+
+                document.getElementById("newReferralLink").value = "";
+                await renderCurrentLink();
+                await renderHistory();
+                setStatus(updateStatus, "Referral link updated successfully.", false);
+            } catch (error) {
+                setStatus(updateStatus, error.message, true);
+            } finally {
+                updateBtn.disabled = false;
+            }
+        });
+    </script>
+</body>
+</html>
