@@ -1,0 +1,7 @@
+{
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/adminpanel", "destination": "/adminpanel.html" },
+    { "source": "/health", "destination": "/api/health" }
+  ]
+}
